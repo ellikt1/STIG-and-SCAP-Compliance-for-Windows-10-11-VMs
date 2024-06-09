@@ -9,15 +9,27 @@ In this project, I applied the Security Technical Implementation Guide (STIG) to
 
 Objectives
  
- - <b>To understand the capabilities of Tenable Nessus in identifying security vulnerabilities. </b>
- - <b>To assess the security posture of a Windows 10 host with common applications installed. </b>
- - <b>To document the identified vulnerabilities and remediate the “critical” and “high” vulnerabilities.</b>
+ - <b>Use the SCAP compliance checker to compare virtual machines against a baseline, scanning for security standard compliance. </b>
+ - <b>Integrate Group Policy Objects (GPOs) from the DoD Cyber Exchange to streamline and enhance the remediation process. </b>
+ - <b>Remediate all Category I (CAT I) vulnerabilities as the primary focus.</b>
+ - <b>Achieve a compliance score above 90%.</b>
 
 
 <h2>Utilities & software Used</h2>
 
 - <b>VMware Workstation Pro 17.5</b>
-- <b>Tenable Nessus® Essentials</b>
+- <b>STIG viewer 2.17</b>
+- <b>SCAP Compliance Checker 5.9(SCC 5.9 Windows)</b>
+- <b>Microsoft LGPO (Local Group Policy Object) tool</b>
+
+<h2>STIGS & Benchmarks Used – (DoD Cyber Exchange)</h2>
+
+- <b>Microsoft Windows 10 STIG - Ver 2, Rel 9</b>
+- <b>Microsoft Windows 11 STIG - Ver 1, Rel 6</b>
+- <b>Microsoft Windows 10 STIG Benchmark - Ver 2, Rel 9</b>
+- <b>Microsoft Windows 11 STIG Benchmark - Ver 1, Rel 3</b>
+- <b>Group Policy Objects (GPOs) - April 2024</b>
+- <b>InstallRoot tool</b>
 
 <h2>Scan Configuration</h2>
 In order to effectively scan the Windows 10 virtual machine, it was necessary to configure Tenable Nessus with the appropriate settings. The process involved the following steps:
