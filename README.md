@@ -1,0 +1,1 @@
+# STIG-and-SCAP-Compliance-for-Windows-10-11-VMs
