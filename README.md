@@ -31,13 +31,22 @@ Objectives
 - <b>Group Policy Objects (GPOs) - April 2024</b>
 - <b>InstallRoot tool</b>
 
-<h2>Scan Configuration</h2>
-In order to effectively scan the Windows 10 virtual machine, it was necessary to configure Tenable Nessus with the appropriate settings. The process involved the following steps:
+<h2>Initial Scan </h2>
+In the initial phase of the project, I imported the STIG benchmarks, specifically the Microsoft Windows 10 STIG Benchmark - Version 2, Release 9, into the SCAP compliance tool. This step was taken to assess the current state of the virtual machines. I opted to conduct this assessment before implementing the Group Policy Objects (GPOs) to gauge the potential impact and effectiveness of the GPOs on system security and compliance. I configured the SCAP compliance checker tool to output the scans in a specified location for improved accessibility.
 <br />
 <br />
-<b>Target Specification:</b>
+ <p align="center">
+Initial SCAP Summary <br/>
+<img src="https://i.imgur.com/dgT6gQp.png" height="80%" width="80%" alt="Initial Scan"/>
+ <br />
+<br />
 
- - To understand the capabilities of Tenable Nessus in identifying security vulnerabilities. 
+After creating a checklist in the STIG viewer to organize notes and reference the STIG, I proceeded to import the SCAP XCCDF file into the STIG viewer. This allowed for a clearer visualization of vulnerabilities, color-coded according to severity (CAT I, II, III), enhancing the assessment process. 
+
+ <p align="center">
+Initial STIG View <br/>
+<img src="https://i.imgur.com/4XLn5Xd.png" height="80%" width="80%" alt="Initial Scan"/>
+
 
 
 <b>Credential Configuration:</b>
