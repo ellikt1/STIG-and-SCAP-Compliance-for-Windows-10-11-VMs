@@ -62,12 +62,75 @@ Applying DoD GPOs using Microsoft's LGPO tool  <br/>
 <img src="https://i.imgur.com/rOLgr7T.png" height="80%" width="80%" alt="LGPO"/>
 
 <p align="center">
- DoD startup screenn <br/>
+ DoD Startup Screen <br/>
 <img src="https://i.imgur.com/PIpVc6B.png" height="80%" width="80%" alt="LGPO"/>
  
 
-<h2>Initial Scan </h2>
-The initial scan revealed a total of 392 vulnerabilities, categorized as follows:
+<h2>2nd Scan </h2>
+
+- After successfully integrating the GPOs from the DoD Cyber Exchange, I conducted another SCAP scan to assess the updated state of the virtual machines. The scan resulted in a compliance score of 96.21, indicating overall compliance. However, there were 2 remaining CAT I vulnerabilities that required remediation.
+The first CAT I vulnerability involved configuring DEP (Data Execution Prevention) to at least Opt-out. To address this, I followed the provided fix from the STIG by navigating to the Control Panel and enabling DEP for all programs and services except those I selected. Then, I changed this open finding to "Not a Finding" in the STIG viewer and updated the comment to "Resolved with the fix provided above."
+
+- The second CAT I vulnerability required enabling BitLocker. Upon attempting to enable BitLocker, I encountered a Group Policy conflict error. To resolve this, I adjusted the GPO settings to disallow TPM startup, enabling me to configure BitLocker successfully. After configuring BitLocker, I restarted the system and conducted another SCAP scan. Then, I changed this open finding to "Not a Finding" in the STIG viewer and updated the comment to "Resolved with the fix provided above."
+
+- I decided to resolve the CAT II vulnerabilities V-220903, V-220904, V-220905, and V-220906 to achieve a 100% compliance score. These vulnerabilities were related to installing the correct DoD Root CA certificates. To address them, I downloaded the InstallRoot tool from the Cyber Exchange website and used it to install the correct DoD Root CAs.  
+
+- It's worth noting that the SCAP tool may not scan all rules in the STIG, necessitating manual verification in real-world scenarios to ensure all vulnerabilities are addressed. However, for the purpose of this project, manual verification was not performed.
+
+
+<p align="center">
+ DEP CAT I Vulnerability <br/>
+<img src="https://i.imgur.com/LM6vjvF.png" height="80%" width="80%" alt="CAT I"/>
+
+<p align="center">
+ BitLocker CAT I Vulnerability <br/>
+<img src="https://i.imgur.com/ag8hYoP.png" height="80%" width="80%" alt="CAT I"/>
+
+
+
+
+<h2>Final Scan</h2>
+After remediating all the CAT I and CAT II vulnerabilities, I used the SCAP tool to perform another scan. This is what I was left with:
+
+<p align="center">
+Final SCAP Summary Viewer <br/>
+<img src="https://i.imgur.com/TLtPxoR.png" height="80%" width="80%" alt="100% SCAP SCAN"/>
+
+<p align="center">
+Final SCAP Summary Viewer cont. <br/>
+<img src="https://i.imgur.com/UXqkV71.png" height="80%" width="80%" alt="No CAT Vulnerabilities"/>
+
+
+
+<h2>Windows 11 </h2>
+I repeated the same steps outlined above to remediate the Windows 11 virtual machine. I focused on achieving a green compliance score with the SCAP tool, addressing the same types of vulnerabilities and using similar remediation methods as with the Windows 10 virtual machine. Once the SCAP tool indicated a green compliance status, I concluded the remediation process. I included some screenshots below of the process.
+
+
+
+<p align="center">
+SCAP Summary Viewer (Before adding DoD GPOs) cont. <br/>
+<img src="https://i.imgur.com/EK8rvpw.png" height="80%" width="80%" alt="100% SCAP SCAN"/>
+
+<p align="center">
+Stig viewer (Before adding DoD GPOs) <br/>
+<img src="https://i.imgur.com/gXROakW.png" height="80%" width="80%" alt="100% SCAP SCAN"/>
+
+<p align="center">
+Stig Viewer after remediating BitLocker, GPOs, DEP, and password vulnerabilities <br/>
+<img src="https://i.imgur.com/sQmcDAM.png" height="80%" width="80%" alt="100% SCAP SCAN"/>
+
+<p align="center">
+Final SCAP Summary Viewer <br/>
+<img src="https://i.imgur.com/p5wbipQ.png" height="80%" width="80%" alt="100% SCAP SCAN"/>
+
+
+
+
+
+
+
+
+
 
 - <b>Critical Vulnerabilities: 33</b>
 
@@ -100,6 +163,7 @@ Scan 1 Vulnerabilities cont. <br/>
 <p align="center">
 Scan 1 Vulnerabilities cont. <br/>
 <img src="https://i.imgur.com/krWo0MR.png" height="80%" width="80%" alt="Operating System Deployment"/>
+
 
 
 
