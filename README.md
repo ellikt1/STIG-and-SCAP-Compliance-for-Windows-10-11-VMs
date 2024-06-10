@@ -49,20 +49,21 @@ Initial STIG View <br/>
 
 
 
-<b>Credential Configuration:</b>
+<h2>Group policy</h2>
  
- - The Nessus vulnerability scanner was configured to perform a credentialed scan. By providing valid Windows credentials, the scanner was able to authenticate to the target system. This approach allowed for a deeper and more comprehensive analysis of the virtual machine, as it could access system files, registry settings, and configuration details that are not available through non-credentialed scans. With credentialed access, Nessus conducted an in-depth evaluation of the virtual machine, checking for missing patches, misconfigurations, insecure settings, and outdated software versions. This comprehensive approach significantly enhanced the scanner's ability to uncover vulnerabilities that would otherwise remain hidden in a standard, non-credentialed scan.
-
-By configuring the Nessus scanner in this manner, the assessment provided a thorough understanding of the security posture of the Windows 10 host, enabling the identification of both surface-level and deep-rooted vulnerabilities. This comprehensive approach ensured that the findings were detailed and actionable, leading to more effective remediation strategies.
+To update the current group policies, I utilized the Microsoft LGPO tool to integrate the latest GPOs obtained from the DoD Cyber Exchange. Following the LGPO tool's documentation, I launched a Command Prompt as an administrator and navigated to the LGPO tool directory. Then, I executed the command LGPO.exe /g “File Path of the DOD GPO” twice, once for the computer configuration and once for the user configuration, adjusting the file paths accordingly. After completing this step, I initiated a quick update of the group policy by running the command gpupdate /force and I restarted the VM.
 
 <p align="center">
-Configuring the Scan <br/>
-<img src="https://i.imgur.com/NDEx8CI.png" height="80%" width="80%" alt="Operating System Deployment"/>
+Applying DoD GPOs using Microsoft's LGPO tool  <br/>
+<img src="https://i.imgur.com/NUWCKrN.png" height="80%" width="80%" alt="LGPO"/>
 
 <p align="center">
-Configuring the Scan cont. <br/>
-<img src="https://i.imgur.com/305bLyK.png" height="80%" width="80%" alt="Operating System Deployment"/>
+ Applying DoD GPOs using Microsoft's LGPO tool cont. <br/>
+<img src="https://i.imgur.com/rOLgr7T.png" height="80%" width="80%" alt="LGPO"/>
 
+<p align="center">
+ DoD startup screenn <br/>
+<img src="https://i.imgur.com/PIpVc6B.png" height="80%" width="80%" alt="LGPO"/>
  
 
 <h2>Initial Scan </h2>
